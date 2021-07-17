@@ -1,0 +1,7 @@
+{
+  "name": "optylab_project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
