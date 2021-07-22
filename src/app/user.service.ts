@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private url = 'http://192.168.1.251:8080/service_web/liste_user/';
+  private url =
+    'https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001';
   constructor(private http: HttpClient) {}
   getusers(): Observable<any> {
     return this.http.get(this.url);
