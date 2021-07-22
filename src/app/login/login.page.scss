@@ -1,0 +1,57 @@
+ion-content {
+  --ion-background-color: #e1eaf9 !important;
+  position: absolute;
+  margin-top: 200px;
+}
+ion-header {
+  position: absolute;
+}
+ion-toolbar {
+  ion-title {
+    text-align: center;
+  }
+  --ion-background-color: transparent;
+  --opacity: 0;
+}
+ion-card-title {
+  margin-bottom: 30px;
+  font-size: 15 px;
+  color: #080808;
+  text-align: center;
+  font-weight: 500;
+}
+ion-card {
+  --ion-background-color: transparent;
+  box-shadow: none !important;
+}
+.wrapform {
+  margin-top: 15px;
+}
+ion-item {
+  color: #74787e;
+  border-color: #74787e;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  font-size: 23px;
+  ion-input {
+    color: #647890;
+  }
+}
+.password_forgot {
+  ion-button {
+    font-size: 15px;
+  }
+}
+.create_account {
+  ion-button {
+    font-size: 15px;
+  }
+}
+login-btn-wrap {
+  text-align: center;
+  padding-top: 30px;
+  .login-btn {
+    --ion-primary-color: #215ab7;
+    color: #f4f6fa;
+  }
+}

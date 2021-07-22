@@ -1,0 +1,70 @@
+<ion-app>
+  <ion-header class="ion-no-border">
+    <ion-toolbar> </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-card>
+      <ion-img src="assets/image/header1.png"></ion-img>
+      <ion-card-header>
+        <ion-card-title>Welcome</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card-content>
+      <div class="wrapform">
+        <form #signform="ngForm">
+          <ion-list>
+            <ion-item>
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <ion-input
+                placeholder="username"
+                type="text"
+                name="username"
+                ngModel
+                [(ngModel)]="userlog.username"
+                required
+              ></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-icon name="lock-closed-outline"></ion-icon>
+
+              <ion-input
+                placeholder="password"
+                type="Password"
+                name="password"
+                ngModel
+                required
+                [(ngModel)]="userlog.password"
+              ></ion-input>
+            </ion-item>
+            <div class="login-btn-wrap">
+              <ion-button
+                fill="solid"
+                expand="full"
+                type="submit"
+                shape="round"
+                class="login-btn"
+                (click)="onloggedin()"
+                >Connection</ion-button
+              >
+            </div>
+            <ion-item lines="none">
+              <div class="password_forgot">
+                <ion-button routerLink="/sign-up" fill="clear"
+                  >mot de passe oublier?</ion-button
+                >
+              </div>
+              <div class="create_account">
+                <ion-button routerLink="/sign-up" fill="clear"
+                  >Créez votre compte!</ion-button
+                >
+              </div>
+            </ion-item>
+          </ion-list>
+        </form>
+      </div>
+    </ion-card-content>
+  </ion-content>
+</ion-app>

@@ -1,0 +1,75 @@
+<ion-content padding="true">
+  <h1>Créez votre compte.</h1>
+
+  <form #myForm="ngForm" (ngSubmit)="submit(myForm)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input
+          autocomplete="off"
+          type="text"
+          name="name"
+          [(ngModel)]="model.name"
+          #name="ngModel"
+          required
+        ></ion-input>
+
+        <!-- Error -->
+        <div class="invalid-feedback" *ngIf="myForm.submitted && name.invalid">
+          <p *ngIf="name.errors.required">Name value is required.</p>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">E-mail</ion-label>
+        <ion-input
+          autocomplete="off"
+          type="email"
+          name="email"
+          [(ngModel)]="model.email"
+          #email="ngModel"
+          required
+        ></ion-input>
+
+        <!-- Error -->
+        <div *ngIf="myForm.submitted && email.invalid" class="invalid-feedback">
+          <div *ngIf="email.errors.required">Email is required.</div>
+          <div *ngIf="email.errors.email">Please provide valid email.</div>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Mot de passe</ion-label>
+        <ion-input
+          autocomplete="off"
+          type="password"
+          name="password"
+          [(ngModel)]="model.password"
+          #password="ngModel"
+          minlength="6"
+          required
+        ></ion-input>
+
+        <!-- Error -->
+        <div
+          *ngIf="myForm.submitted && password.invalid"
+          class="invalid-feedback"
+        >
+          <div *ngIf="password.errors.required">Set a strong password.</div>
+          <div *ngIf="password.errors.minlength">
+            Minimum 6 characters required.
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      fill="outline"
+      type="submit"
+      expand="block"
+      share="round"
+      color="success"
+      >Registration</ion-button
+    >
+    <ion-item lines="none">
+      <a routerLink="/login">Already have an account?</a>
+    </ion-item>
+  </form>
+</ion-content>
