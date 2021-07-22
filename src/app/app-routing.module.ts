@@ -22,6 +22,22 @@ const routes: Routes = [
     loadChildren: () =>
       import('./sign-up/sign-up.module').then((m) => m.SignUpPageModule),
   },
+  {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'payement',
+    loadChildren: () => import('./payement/payement.module').then( m => m.PayementPageModule)
+  },
+  {
+    path: 'detail',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
+    path: 'relevai',
+    loadChildren: () => import('./relevai/relevai.module').then( m => m.RelevaiPageModule)
+  },
 ];
 
 @NgModule({

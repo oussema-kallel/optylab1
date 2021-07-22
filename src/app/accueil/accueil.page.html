@@ -1,22 +1,3 @@
-<ion-menu side="start" content-id="main-content">
-  <ion-header>
-    <ion-toolbar translucent>
-      <ion-title>Accueil</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-item>
-        <ion-icon name="paper-plane" slot="start"></ion-icon>
-        <ion-label>Bilan</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="warning" slot="start"></ion-icon>
-        <ion-label>Deconnecter</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
 <div id="main-content">
   <ion-header>
     <ion-toolbar>
@@ -26,27 +7,6 @@
       <ion-title>Accueil</ion-title>
     </ion-toolbar>
   </ion-header>
-  <!--<ion-content>
-    <table
-      datatable
-      class="table table-striped table-bordered"
-      cellspacing="0"
-      width="100%"
-    >
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>First name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let person of userdata">
-          <td>{{ person.NC }}</td>
-          <td>{{ person.Lib }}</td>
-        </tr>
-      </tbody>
-    </table>-->
-
   <!--<ion-row>
       <ion-col size="6" sizeMd="4" sizeLg="2"> code</ion-col>
       <ion-col size="6" sizeMd="4" sizeLg="2"> libelle </ion-col>
@@ -70,7 +30,7 @@
   <div class="ion-padding">
     <!-- Theme classes dark, material, bootstrap -->
     <ngx-datatable
-      class="material"
+      class="bootstrap"
       [limit]="8"
       [rows]="userdata"
       [rowHeight]="50"

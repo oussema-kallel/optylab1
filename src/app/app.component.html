@@ -1,3 +1,51 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" content-id="main-content" menuId="main-menu">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Accueil</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/accueil">
+            <ion-icon name="home" slot="start"></ion-icon>
+            <ion-label>Accueil</ion-label>
+          </ion-item></ion-menu-toggle
+        >
+        <ion-menu-toggle autoHide>
+          <ion-item routerLink="/relevai">
+            <ion-icon name="document-text-outline" slot="start"></ion-icon>
+            <ion-label>Relevai Client</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle
+          ><ion-item routerLink="/detail">
+            <ion-icon name="id-card-outline" slot="start"></ion-icon>
+            <ion-label>Detail solde client</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle
+          ><ion-item routerLink="/payement">
+            <ion-icon name="card-outline" slot="start"></ion-icon>
+            <!-- <ion-icon name="wallet-outline" slot="start"></ion-icon>-->
+            <ion-label>Payement en ligne</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle
+          ><ion-item routerLink="/contact">
+            <ion-icon name="chatbox-ellipses-outline" slot="start"></ion-icon>
+            <ion-label>Contact</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle
+          ><ion-item routerLink="/login">
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            <ion-label>Deconnecter</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>
