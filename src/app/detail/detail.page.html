@@ -6,4 +6,61 @@
     <ion-title>Detail</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content></ion-content>
+<ion-content>
+  <div class="ion-padding">
+    <!-- Theme classes dark, material, bootstrap -->
+    <ngx-datatable
+      class="bootstrap material"
+      style="height: 600px; overflow-y: visible"
+      [rows]="rows"
+      [limit]="8"
+      [rowHeight]="50"
+      [columnMode]="'standard'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [scrollbarH]="true"
+      [sorts]="[{prop: 'name', dir: 'desc'}]"
+    >
+      <ngx-datatable-column name="Raison social/nom">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.Code}} ({{row.Lib}})
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Libelle" prop="Libelle">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.Libelle}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="N°Piece" prop="NumPiece">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.NumPiece}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Débit" prop="Debit">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.Debit}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Credit" prop="Credit">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.Credit}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Reglement" prop="Reglement">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.Reglement}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Avoir" prop="Avoir">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.Avoir}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Solde" prop="Solde">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.Solde}}
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</ion-content>

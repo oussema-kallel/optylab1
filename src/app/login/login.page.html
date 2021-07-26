@@ -5,7 +5,7 @@
 
   <ion-content>
     <ion-card>
-      <ion-img src="assets/image/header1.png"></ion-img>
+      <ion-img src="assets/image/h1.png"></ion-img>
       <ion-card-header>
         <ion-card-title>Welcome</ion-card-title>
       </ion-card-header>
@@ -45,6 +45,7 @@
                 expand="full"
                 type="submit"
                 shape="round"
+                color="success"
                 class="login-btn"
                 (click)="onloggedin()"
                 >Connection</ion-button
@@ -52,7 +53,10 @@
             </div>
             <ion-item lines="none">
               <div class="password_forgot">
-                <ion-button routerLink="/sign-up" fill="clear"
+                <ion-button
+                  routerLink="/forgotpassword"
+                  fill="clear"
+                  color="success"
                   >mot de passe oublier?</ion-button
                 >
               </div>

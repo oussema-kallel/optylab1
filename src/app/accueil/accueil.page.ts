@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserService } from '../user.service';
 import { ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -10,16 +9,7 @@ import { ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class AccueilPage implements OnInit {
-  userdata: Array<any> = [];
-  public columns: any;
-  public rows: any;
-  constructor(private user: UserService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.columns = [{ name: 'id' }, { name: 'firstName' }];
-    this.user.getusers().subscribe((res) => {
-      console.log(res);
-      this.userdata = res;
-    });
-  }
+  ngOnInit() {}
 }

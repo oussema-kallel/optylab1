@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { DetailPageRoutingModule } from './detail-routing.module';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { DetailPage } from './detail.page';
 
@@ -13,8 +14,9 @@ import { DetailPage } from './detail.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DetailPageRoutingModule
+    DetailPageRoutingModule,
+    NgxDatatableModule,
   ],
-  declarations: [DetailPage]
+  declarations: [DetailPage],
 })
 export class DetailPageModule {}

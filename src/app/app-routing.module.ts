@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'relevai',
     loadChildren: () => import('./relevai/relevai.module').then( m => m.RelevaiPageModule)
   },
+  {
+    path: 'forgotpassword',
+    loadChildren: () => import('./forgotpassword/forgotpassword.module').then( m => m.ForgotpasswordPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 ion-content {
-  --ion-background-color: #e1eaf9 !important;
+  --ion-background-color: #e5eee2 !important;
   position: absolute;
   margin-top: 200px;
 }
@@ -14,8 +14,8 @@ ion-toolbar {
   --opacity: 0;
 }
 ion-card-title {
-  margin-bottom: 30px;
-  font-size: 15 px;
+  margin-bottom: 10 px;
+  font-size: 100 px;
   color: #080808;
   text-align: center;
   font-weight: 500;
@@ -23,6 +23,9 @@ ion-card-title {
 ion-card {
   --ion-background-color: transparent;
   box-shadow: none !important;
+  ion-img {
+    margin-bottom: 50px;
+  }
 }
 .wrapform {
   margin-top: 15px;
