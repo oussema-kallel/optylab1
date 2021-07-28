@@ -5,3 +5,31 @@
 datatable-scroller {
   width: 100% !important;
 }
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-column {
+  padding-left: 16px;
+  font-size: 20px;
+}
+.mat-header-cell {
+  color: #000;
+  background-color: rgb(190, 191, 199);
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+input.inp-rech {
+  width: 150px;
+}
+input.gg {
+  font-size: 14px;
+  margin-left: 250px;
+  width: 50px;
+  color: #555b5b;
+}
+td,
+th {
+  width: 15%;
+}

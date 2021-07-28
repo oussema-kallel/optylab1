@@ -7,8 +7,108 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div class="ion-padding">
-    <!-- Theme classes dark, material, bootstrap -->
+  <ion-list
+    ><ion-item>
+      <mat-form-field appearance="standard">
+        <mat-label>Rechercher : </mat-label>
+
+        <input
+          class="inp-rech"
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder=""
+          #input
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input class="gg" matInput [(ngModel)]="pageSize" type="number" />
+        <mat-label> par page</mat-label>
+      </mat-form-field>
+    </ion-item>
+  </ion-list>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+      <ion-row>
+        <ion-col size="2">
+          <ng-container matColumnDef="DA">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+            <td mat-cell *matCellDef="let element">{{element.DA}}</td>
+          </ng-container></ion-col
+        >
+      </ion-row>
+
+      <!-- Position Column -->
+
+      <ion-row>
+        <ion-col size="2">
+          <ng-container matColumnDef="Code">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Code</th>
+            <td mat-cell *matCellDef="let element">{{element.Code}}</td>
+          </ng-container></ion-col
+        >
+      </ion-row>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Lib">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Lib</th>
+        <td mat-cell *matCellDef="let element">{{element.Lib}}</td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Libelle">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Libelle</th>
+        <td mat-cell *matCellDef="let element">{{element.Libelle}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="NumPiece">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>NumPiece</th>
+        <td mat-cell *matCellDef="let element">{{element.NumPiece}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Debit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Debit</th>
+        <td mat-cell *matCellDef="let element">{{element.Debit}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Credit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Credit</th>
+        <td mat-cell *matCellDef="let element">{{element.Credit}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Reglement">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Reglement</th>
+        <td mat-cell *matCellDef="let element">{{element.Reglement}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Avoir">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Avoir</th>
+        <td mat-cell *matCellDef="let element">{{element.Avoir}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Solde">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Solde</th>
+        <td mat-cell *matCellDef="let element">{{element.Solde}}</td>
+        <td mat-footer-cell *matFooterCellDef>{{getTotal}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    </table>
+    <ion-item>
+      <mat-paginator
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[10,20,30]"
+        showFirstLastButtons
+      ></mat-paginator
+    ></ion-item>
+  </div>
+
+  <!-- <div class="ion-padding">
+
     <ngx-datatable
       class="bootstrap material"
       style="height: 600px; overflow-y: visible"
@@ -63,4 +163,5 @@
       </ngx-datatable-column>
     </ngx-datatable>
   </div>
+-->
 </ion-content>
