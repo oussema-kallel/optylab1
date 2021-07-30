@@ -7,6 +7,7 @@ import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { FormControl } from '@angular/forms';
 
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -30,6 +31,7 @@ interface Ipost {
   encapsulation: ViewEncapsulation.None,
 })
 export class DetailPage implements OnInit {
+  serializedDate = new FormControl(new Date().toISOString());
   userdata: Array<any> = [];
   columns: string[] = [
     'DA',
@@ -43,7 +45,9 @@ export class DetailPage implements OnInit {
     'Solde',
   ];
   pageSize = 10;
-  public rows: any;
+  public total = 0;
+  private value;
+  public a;
   public dataSource = new MatTableDataSource<Ipost>();
   posts: Ipost[];
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -54,17 +58,21 @@ export class DetailPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    fetch('./assets/test.json')
+    /*fetch('./assets/test.json')
       .then((res) => res.json())
       .then((json) => {
-        this.posts = json;
-        this.dataSource = new MatTableDataSource(this.posts);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-        this.screenOrientation.lock(
-          this.screenOrientation.ORIENTATIONS.LANDSCAPE
-        );
-      });
+        this.posts = json;*/
+    this.user.getusers().subscribe((res) => {
+      console.log(res);
+      this.posts = res;
+      this.dataSource = new MatTableDataSource(this.posts);
+      this.findsum(this.posts);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      this.screenOrientation.lock(
+        this.screenOrientation.ORIENTATIONS.LANDSCAPE
+      );
+    });
   }
 
   /*this.user.getusers().subscribe((res) => {
@@ -77,8 +85,22 @@ export class DetailPage implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   getTotal() {
-    return this.dataSource.data
-      .map((x) => +x.Debit - +x.Reglement)
-      .reduce((a, b) => a + b);
+    return this.dataSource.data.map((x) => +x.Debit - +x.Reglement);
   }
+  findsum(data: string | any[]) {
+    this.value = data;
+
+    for (let j = 0; j < data.length; j++) {
+      this.total += this.value[j].Debit;
+    }
+  }
+  /*creditech( data){
+    this.value =data;
+    for (let j=0; j< data.length; j++){
+
+    if(this.value[j].Debit < 0){
+      this.a=this
+    }
+    }
+  }*/
 }
