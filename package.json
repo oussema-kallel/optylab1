@@ -39,6 +39,7 @@
     "datatables.net-bs4": "^1.10.20",
     "datatables.net-dt": "^1.1.0",
     "jquery": "^3.6.0",
+    "moment": "^2.29.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

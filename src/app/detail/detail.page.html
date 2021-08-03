@@ -9,17 +9,22 @@
 <ion-content>
   <ion-list
     ><mat-form-field>
-      <input matInput [matDatepicker]="picker" [formControl]="serializedDate" />
+      <input matInput [matDatepicker]="picker" [(ngModel)]="firstdate" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-      <input matInput [matDatepicker]="Picker" [formControl]="serializedDate" />
+      <input matInput [matDatepicker]="Picker" [(ngModel)]="enddate" required />
       <mat-datepicker-toggle matSuffix [for]="Picker"></mat-datepicker-toggle>
       <mat-datepicker #Picker></mat-datepicker>
     </mat-form-field>
 
-    <mat-slide-toggle color="primary">Slide me!</mat-slide-toggle>
+    <mat-slide-toggle
+      color="primary"
+      [(ngModel)]="isChecked"
+      (change)="sansBL()"
+      >avec BL</mat-slide-toggle
+    >
 
     <ion-item class="ab">
       <mat-form-field appearance="standard">
@@ -42,9 +47,6 @@
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
-      <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
       <ion-row>
         <ion-col size="2">
           <ng-container matColumnDef="DA">
@@ -125,6 +127,9 @@
       <tr mat-header-row *matHeaderRowDef="columns"></tr>
       <tr mat-row *matRowDef="let row; columns: columns;"></tr>
     </table>
+
+    <!-- Table Total -->
+
     <table>
       <tr>
         <td colspan="4"></td>
@@ -132,6 +137,8 @@
         <td colspan="1"><b> $ {{total.toFixed(3)}}</b></td>
       </tr>
     </table>
+
+    <!-- Pagination -->
 
     <ion-item>
       <mat-paginator
