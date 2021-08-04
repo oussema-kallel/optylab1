@@ -18,11 +18,10 @@
               <ion-icon name="mail-outline"></ion-icon>
 
               <ion-input
-                placeholder="username"
+                placeholder="Login"
                 type="text"
-                name="username"
-                ngModel
-                [(ngModel)]="userlog.username"
+                name="nom"
+                [(ngModel)]="client.nom"
                 required
               ></ion-input>
             </ion-item>
@@ -31,12 +30,11 @@
               <ion-icon name="lock-closed-outline"></ion-icon>
 
               <ion-input
-                placeholder="password"
+                placeholder="Mot de passe"
                 type="Password"
-                name="password"
-                ngModel
+                name="code"
                 required
-                [(ngModel)]="userlog.password"
+                [(ngModel)]="client.code"
               ></ion-input>
             </ion-item>
             <div class="login-btn-wrap">

@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ViewEncapsulation } from '@angular/core';
-
+import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.page.html',
   styleUrls: ['./accueil.page.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class AccueilPage implements OnInit {
-  constructor() {}
+  constructor(private menu: MenuController) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.menu.enable(true);
+  }
 }

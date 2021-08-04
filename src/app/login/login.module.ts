@@ -6,10 +6,17 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginPageRoutingModule } from './login-routing.module';
 
+import { IonicStorageModule } from '@ionic/storage-angular';
 import { LoginPage } from './login.page';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, LoginPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    LoginPageRoutingModule,
+    IonicStorageModule.forRoot(),
+  ],
   declarations: [LoginPage],
 })
 export class LoginPageModule {}

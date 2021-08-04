@@ -15,7 +15,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { DetailPage } from './detail.page';
 
 @NgModule({

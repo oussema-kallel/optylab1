@@ -7,10 +7,18 @@ import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
-import { FormControl } from '@angular/forms';
+import {
+  FormControl,
+  FormBuilder,
+  Validators,
+  FormGroup,
+} from '@angular/forms';
+
 import * as moment from 'moment';
 
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 interface Ipost {
   DA: string;
@@ -33,8 +41,6 @@ interface Ipost {
 })
 export class DetailPage implements OnInit {
   serializedDate = new FormControl(new Date().toISOString());
-
-  userdata: Array<any> = [];
 
   columns: string[] = [
     'DA',
@@ -70,10 +76,16 @@ export class DetailPage implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-
+  readAPI(URL: string) {
+    return this.http.get(URL);
+  }
   constructor(
     private user: UserService,
-    private screenOrientation: ScreenOrientation
+    private screenOrientation: ScreenOrientation,
+    private formBuilder: FormBuilder,
+
+    private router: Router,
+    private http: HttpClient
   ) {}
 
   ngOnInit() {
@@ -161,4 +173,5 @@ export class DetailPage implements OnInit {
     const now = moment();
     return now.format('YYYY-MM-DD');
   }
+  methode() {}
 }
