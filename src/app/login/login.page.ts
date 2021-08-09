@@ -41,7 +41,7 @@ export class LoginPage implements OnInit {
   async onloggedin() {
     await this.storage.create();
     this.http
-      .get('http://192.168.1.251:8080/service_web/liste_user/')
+      .get('http://192.168.1.113/service_web/liste_user/')
       .subscribe((res) => {
         this.userdata = res;
         for (let i = 0; this.userdata.length; i++) {

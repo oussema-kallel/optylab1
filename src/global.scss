@@ -29,3 +29,15 @@
 @import "~@swimlane/ngx-datatable/themes/material.scss";
 @import "~@swimlane/ngx-datatable/assets/icons.css";
 @import "~@swimlane/ngx-datatable/themes/bootstrap.scss";
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+.basic-container {
+  padding: 30px;
+}
+.version-info {
+  font-size: 8pt;
+  float: right;
+  margin: 8px;
+}

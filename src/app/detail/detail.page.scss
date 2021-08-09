@@ -34,5 +34,20 @@ th {
   width: 15%;
 }
 .example-form-field {
-  margin: 0 100px 16px 0;
+  margin: 0 300px 16px 0;
+}
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+ion-toggle::before {
+  position: absolute;
+
+  top: 16px;
+  left: 10px;
+
+  content: "ON";
+
+  color: white;
+  font-size: 8px;
+
+  z-index: 1;
 }

@@ -7,64 +7,98 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-list>
+  <ion-item lines="none">
     <mat-form-field class="example-form-field">
-      <input
-        matInput
-        [matDatepicker]="picker"
-        nom="firstdate"
-        [(ngModel)]="firstdate"
-      />
+      <mat-label></mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input
+          matStartDate
+          placeholder="Start date"
+          nom="firstdate"
+          [(ngModel)]="firstdate"
+          #dateRangeStart
+          (dateChange)="dateRangeChange1(dateRangeStart)"
+        />
+        <input
+          matEndDate
+          placeholder="End date"
+          nom="enddate"
+          [(ngModel)]="enddate"
+          required
+          #dateRangeEnd
+          (dateChange)="dateRangeChange2(dateRangeEnd)"
+        />
+      </mat-date-range-input>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <mat-date-range-picker #picker></mat-date-range-picker>
     </mat-form-field>
-    <mat-form-field class="example-form-field">
-      <input
-        matInput
-        [matDatepicker]="Picker"
-        nom="enddate"
-        [(ngModel)]="enddate"
-        required
-      />
-      <mat-datepicker-toggle matSuffix [for]="Picker"></mat-datepicker-toggle>
-      <mat-datepicker #Picker></mat-datepicker>
-    </mat-form-field>
-    <!--  <ion-item>
+    <mat-slide-toggle
+      color="primary"
+      (change)="sansBL()"
+      [(ngModel)]="isChecked"
+    >
+      avec BL</mat-slide-toggle
+    >
+  </ion-item>
+
+  <!--<mat-form-field class="example-form-field">
+    <input
+      matInput
+      [matDatepicker]="picker"
+      nom="firstdate"
+      [(ngModel)]="firstdate"
+      #dateRangeStart
+          (dateChange)="dateRangeChange1(dateRangeStart)"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field class="example-form-field">
+    <input
+      matInput
+      [matDatepicker]="Picker"
+      nom="enddate"
+      [(ngModel)]="enddate"
+      required
+         #dateRangeEnd
+          (dateChange)="dateRangeChange2(dateRangeEnd)"
+    />
+    <mat-datepicker-toggle matSuffix [for]="Picker"></mat-datepicker-toggle>
+    <mat-datepicker #Picker></mat-datepicker>
+  </mat-form-field>-->
+  <!--<ion-item>
       <ion-datetime
         displayFormat="MM/DD/YYYY"
         [(ngModel)]="firstdate"
       ></ion-datetime>
+       <ion-datetime
+        displayFormat="MM/DD/YYYY"
+        [(ngModel)]="enddate"
+      ></ion-datetime>
     </ion-item>-->
-    <mat-slide-toggle
-      color="primary"
-      [(ngModel)]="isChecked"
-      (change)="sansBL()"
-      >avec BL</mat-slide-toggle
-    >
 
-    <ion-item class="ab">
-      <mat-form-field appearance="standard">
-        <mat-label>Rechercher : </mat-label>
+  <ion-item class="ab">
+    <mat-form-field appearance="standard">
+      <mat-label>Rechercher : </mat-label>
 
-        <input
-          class="inp-rech"
-          matInput
-          (keyup)="applyFilter($event)"
-          placeholder=""
-          #input
-        />
-      </mat-form-field>
-      <!--<mat-form-field appearance="fill">
+      <input
+        class="inp-rech"
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder=""
+        #input
+      />
+    </mat-form-field>
+    <!--<mat-form-field appearance="fill">
         <input class="gg" matInput [(ngModel)]="pageSize" type="number" />
         <mat-label> par page</mat-label>
       </mat-form-field>-->
-    </ion-item>
-  </ion-list>
+  </ion-item>
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <ion-row>
-        <ion-col size="2">
+        <ion-col size="5" sizeMd="2" sizeLg="6">
           <ng-container matColumnDef="DA">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
             <td mat-cell *matCellDef="let element">{{element.DA}}</td>
