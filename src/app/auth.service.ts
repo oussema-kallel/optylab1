@@ -6,10 +6,7 @@ import { User } from './model/user';
   providedIn: 'root',
 })
 export class AuthService {
-  users: User[] = [
-    { username: 'admin', password: '123' },
-    { username: 'oussema', password: '123' },
-  ];
+  users: User[] = [{ username: 'admin', password: '123' }];
   public loggedUser: string;
 
   public isloggedIn: Boolean = false;

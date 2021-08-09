@@ -55,21 +55,5 @@ export class LoginPage implements OnInit {
           }
         }
       });
-
-    /*console.log(this.userlog);
-    const isValidUser: Boolean = this.authService.SignIn(this.userlog);
-    if (isValidUser) {
-      this.router.navigate(['/accueil']);
-    } else {
-      //alert('login et mot de passe incorrect');
-      Swal.fire('Non connecté', 'Login ou mot de passe incorrecte!', 'error');
-    }*/
   }
-  //savedata(signform: NgForm) {
-  // console.log(signform.value);
-  //  this.UserService.loginuser(this.loginuserData).subscribe(
-  //   (res) => console.log(res),
-  //   (err) => console.log(err)
-  //   );
-  // }
 }
