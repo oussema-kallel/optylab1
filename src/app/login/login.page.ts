@@ -50,7 +50,7 @@ export class LoginPage implements OnInit {
             this.client.code === res[i].NC
           ) {
             this.storage.set('code', this.client.code);
-            console.log(this.storage.get('code'));
+
             this.router.navigate(['/accueil']);
           }
         }

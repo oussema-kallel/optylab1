@@ -1,7 +1,6 @@
 ion-content {
-  --ion-background-color: #e5eee2 !important;
+  --ion-background-color: #fff !important;
   position: absolute;
-  margin-top: 200px;
 }
 ion-header {
   position: absolute;
@@ -13,48 +12,65 @@ ion-toolbar {
   --ion-background-color: transparent;
   --opacity: 0;
 }
-ion-card-title {
-  margin-bottom: 10 px;
-  font-size: 100 px;
-  color: #080808;
-  text-align: center;
-  font-weight: 500;
-}
-ion-card {
-  --ion-background-color: transparent;
-  box-shadow: none !important;
-  ion-img {
-    margin-bottom: 50px;
+
+.background {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: url("../../assets/image/13.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60%;
+  flex-direction: column;
+  justify-content: center;
+
+  ion-card-title {
+    margin-bottom: 10 px;
+    font-size: 100 px;
+    color: #080808;
+    text-align: center;
+    font-weight: 500;
   }
-}
-.wrapform {
-  margin-top: 15px;
-}
-ion-item {
-  color: #74787e;
-  border-color: #74787e;
-  --padding-start: 0;
-  --inner-padding-end: 0;
-  font-size: 23px;
-  ion-input {
-    color: #647890;
+  ion-card {
+    --ion-background-color: transparent;
+    box-shadow: none !important;
+    ion-img {
+      margin-bottom: 50px;
+    }
   }
-}
-.password_forgot {
-  ion-button {
-    font-size: 15px;
+
+  .password_forgot {
+    ion-button {
+      font-size: 20px;
+      color: rgba(10, 10, 10, 0.678);
+    }
   }
-}
-.create_account {
-  ion-button {
-    font-size: 15px;
+  .create_account {
+    ion-button {
+      font-size: 15px;
+    }
   }
-}
-login-btn-wrap {
-  text-align: center;
-  padding-top: 30px;
-  .login-btn {
-    --ion-primary-color: #215ab7;
-    color: #f4f6fa;
+  ion-card-content {
+    margin-top: 500px;
+    --ion-background-color: transparent;
+    box-shadow: none !important;
+    ion-item {
+      --ion-item-background: transparent;
+      --border-width: 0;
+      --inner-border-width: 0;
+      --highlight-color-focused: none;
+      margin-bottom: 15px;
+
+      ion-input {
+        width: 257px;
+        height: 42px;
+        border-radius: 15px;
+        border: 1px solid #198645;
+        font-size: 14px;
+        font-weight: 300;
+        color: #555b5b;
+        --padding-start: 30px;
+      }
+    }
   }
 }

@@ -43,12 +43,6 @@ interface Ipost {
   encapsulation: ViewEncapsulation.None,
 })
 export class DetailPage implements OnInit {
-  events: string[] = [];
-
-  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    this.events.push(`${type}: ${event.value}`);
-  }
-
   columns: string[] = [
     'DA',
     'Code',
@@ -105,28 +99,12 @@ export class DetailPage implements OnInit {
     this.test();
   }
   async ngOnInit() {
-    /* fetch('./assets/test.json')
-      .then((res) => res.json())
-      .then((json) => {
-        this.posts = json;*/
-    // this.user.getusers().subscribe((res) => {
-    // console.log(res);
-    // this.posts = res;
     this.v3 = 1;
     this.isChecked = true;
     this.test();
-    //this.findsum(this.posts);
-
-    // this.isValidDate = this.validateDates(this.firstdate, this.enddate);
-    // console.log(this.isValidDate);
 
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
   }
-
-  /*this.user.getusers().subscribe((res) => {
-      console.log(res);
-      this.rows = res;
-    });*/
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -135,22 +113,13 @@ export class DetailPage implements OnInit {
   getTotal() {
     return this.dataSource.data.map((x) => +x.Credit - +x.Reglement);
   }
-  /* findsum(data: string | any[]) {
+  findsum(data) {
     this.value = data;
 
     for (let j = 0; j < data.length; j++) {
       this.total += this.value[j].Debit;
     }
-  }*/
-  /*creditech( data){
-    this.value =data;
-    for (let j=0; j< data.length; j++){
-
-    if(this.value[j].Debit < 0){
-      this.a=this
-    }
-    }
-  }*/
+  }
 
   getCurrentTime() {
     let now = moment();
@@ -186,11 +155,11 @@ export class DetailPage implements OnInit {
           this.v3
       ).subscribe((res) => {
         this.dataclient = res;
-        console.log(this.dataclient);
+
         this.posts = this.dataclient;
         this.dataSource = new MatTableDataSource(this.posts);
         this.dataSource.paginator = this.paginator;
-
+        // this.findsum(this.posts);
         this.dataSource.sort = this.sort;
       });
     });

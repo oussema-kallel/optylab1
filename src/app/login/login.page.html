@@ -4,69 +4,65 @@
   </ion-header>
 
   <ion-content>
-    <ion-card>
-      <ion-img src="assets/image/h1.png"></ion-img>
-      <ion-card-header>
-        <ion-card-title>Welcome</ion-card-title>
-      </ion-card-header>
-    </ion-card>
-    <ion-card-content>
-      <div class="wrapform">
-        <form #signform="ngForm">
-          <ion-list>
-            <ion-item>
-              <ion-icon name="mail-outline"></ion-icon>
+    <div class="background">
+      <ion-card-content>
+        <div class="wrapform">
+          <form #signform="ngForm">
+            <ion-list>
+              <ion-item>
+                <ion-icon name="mail-outline"></ion-icon>
 
-              <ion-input
-                placeholder="Login"
-                type="text"
-                name="nom"
-                [(ngModel)]="client.nom"
-                required
-              ></ion-input>
-            </ion-item>
+                <ion-input
+                  placeholder="Login"
+                  type="text"
+                  name="nom"
+                  [(ngModel)]="client.nom"
+                  required
+                ></ion-input>
+              </ion-item>
 
-            <ion-item>
-              <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-item>
+                <ion-icon name="lock-closed-outline"></ion-icon>
 
-              <ion-input
-                placeholder="Mot de passe"
-                type="Password"
-                name="code"
-                required
-                [(ngModel)]="client.code"
-              ></ion-input>
-            </ion-item>
-            <div class="login-btn-wrap">
-              <ion-button
-                fill="solid"
-                expand="full"
-                type="submit"
-                shape="round"
-                color="success"
-                class="login-btn"
-                (click)="onloggedin()"
-                >Connection</ion-button
-              >
-            </div>
-            <ion-item lines="none">
-              <div class="password_forgot">
+                <ion-input
+                  placeholder="Mot de passe"
+                  type="Password"
+                  name="code"
+                  required
+                  [(ngModel)]="client.code"
+                ></ion-input>
+              </ion-item>
+              <div class="login-btn-wrap">
                 <ion-button
-                  routerLink="/forgotpassword"
-                  fill="clear"
+                  fill="solid"
+                  expand="full"
+                  type="submit"
+                  shape="round"
                   color="success"
-                  >mot de passe oublier?</ion-button
+                  class="login-btn"
+                  (click)="onloggedin()"
+                  >Connection</ion-button
                 >
               </div>
-              <!--<div class="create_account">
+              <ion-item lines="none">
+                <div class="password_forgot">
+                  <ion-button
+                    routerLink="/forgotpassword"
+                    fill="clear"
+                    color="success"
+                    >mot de passe oublier?</ion-button
+                  >
+                </div>
+                <!-- <div class="create_account">
                 <ion-button routerLink="/sign-up" fill="clear"
                   >Créez votre compte!</ion-button
                 >
               </div>-->
-            </ion-item>
-          </ion-list>
-        </form>
-      </div>
-    </ion-card-content>
+              </ion-item>
+            </ion-list>
+          </form>
+        </div>
+      </ion-card-content>
+    </div>
   </ion-content>
 </ion-app>
