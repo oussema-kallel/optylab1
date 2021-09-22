@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
-import Swal from 'sweetalert2';
+
 export interface Data {
   clients: string;
 }
